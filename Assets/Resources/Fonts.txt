@@ -1,0 +1,36 @@
+{"frames": {
+
+"Arial20_0.tga":
+{
+	"frame": {"x":0,"y":0,"w":512,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":50},
+	"sourceSize": {"w":512,"h":50}
+},
+"Arial40_0.tga":
+{
+	"frame": {"x":0,"y":50,"w":512,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":100},
+	"sourceSize": {"w":512,"h":100}
+},
+"Arial55_0.tga":
+{
+	"frame": {"x":0,"y":150,"w":512,"h":162},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":162},
+	"sourceSize": {"w":512,"h":162}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "Fonts.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:dc203b5675f66989af2986ae2a3e9188$"
+}
+}
