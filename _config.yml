@@ -1,0 +1,8 @@
+title: BrickUm
+description: A simple brick break / breakout game made with Unity 3D / C#
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
