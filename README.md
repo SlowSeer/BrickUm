@@ -1,4 +1,4 @@
-BrickUm
+Brick'Um
 =======
 
 A simple brick break / breakout game with a few different game-play modes.
@@ -11,3 +11,8 @@ Available On:
 
 * https://slowseer.itch.io/brickum - WebGL Build.
 * https://play.google.com/store/apps/details?id=com.SlowSeer.BrickumGame - free, no adds, purchases, or permissions!
+
+<p align="center"> 
+<img src="Promo/Brick'um.png">
+</p>
+  
