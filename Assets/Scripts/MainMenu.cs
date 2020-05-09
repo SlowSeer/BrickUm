@@ -485,7 +485,7 @@ public class MainMenu : MonoBehaviour {
 
     // Show Menu Screen
     void ShowMenu() {
-        background.renderer.material = backgroundMenu;
+        background.GetComponent<Renderer>().material = backgroundMenu;
         containerMenu.hidden = false;
         buttonOptions.hidden = false;
         tipText.hidden = false;
@@ -494,7 +494,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     void ShowOptions() {
-        background.renderer.material = backgroundMenu;
+        background.GetComponent<Renderer>().material = backgroundMenu;
         containerOptions.hidden = false;
         backButton.hidden = false;
         txtGameMode.hidden = false;
@@ -515,7 +515,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     void ShowFreePlay() {
-        background.renderer.material = backgroundFreePlay;
+        background.GetComponent<Renderer>().material = backgroundFreePlay;
         containerFreePlay.hidden = false;
         backButton.hidden = false;
         txtGameMode.hidden = false;
@@ -529,7 +529,7 @@ public class MainMenu : MonoBehaviour {
 
     // Show Campaign Screen
     void ShowCampaign() {
-        background.renderer.material = backgroundCampaign;
+        background.GetComponent<Renderer>().material = backgroundCampaign;
         containerCampaign.hidden = false;
         backButton.hidden = false;
         txtGameMode.hidden = false;
@@ -543,7 +543,7 @@ public class MainMenu : MonoBehaviour {
 
     // Show Kid Mode Screen
     void ShowKidMode() {
-        background.renderer.material = backgroundKidMode;
+        background.GetComponent<Renderer>().material = backgroundKidMode;
         containerKidMode.hidden = false;
         backButton.hidden = false;
         txtGameMode.hidden = false;

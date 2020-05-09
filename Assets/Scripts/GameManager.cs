@@ -166,7 +166,7 @@ public class GameManager : MonoSingleton<GameManager> {
                 LoadLevel(sSelectedGameLevel.levelData);
 
                 // Set Background.
-                background.renderer.material = gameSetup.backgrounds[sSelectedGameLevel.background];
+                background.GetComponent<Renderer>().material = gameSetup.backgrounds[sSelectedGameLevel.background];
 
                 // Set Paddle Color
                 paddle.paddleColor = sSelectedGameLevel.paddleColor;
@@ -191,8 +191,8 @@ public class GameManager : MonoSingleton<GameManager> {
         textTitle.text = sSelectedGameLevel.levelName;
         textSubtitle.text = "Position paddle then tap the ball to start!";
 
-        textBuff.renderer.enabled = false;
-        textBuffRenderer = textBuff.renderer;
+        textBuff.GetComponent<Renderer>().enabled = false;
+        textBuffRenderer = textBuff.GetComponent<Renderer>();
         textBuffColor = textBuffRenderer.material.color;
 
         // We dont start with a bomb, do disable the button.
@@ -210,7 +210,7 @@ public class GameManager : MonoSingleton<GameManager> {
                 CheckTouch(t);
             }
         }
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_WEBGL
         else {
             if (Input.GetMouseButtonDown(0)) { CheckTouch(UITouchMaker.createTouchFromInput(UIMouseState.DownThisFrame, ref lastMousePosition)); }
             if (Input.GetMouseButton(0)) { CheckTouch(UITouchMaker.createTouchFromInput(UIMouseState.HeldDown, ref lastMousePosition)); }
@@ -240,7 +240,7 @@ public class GameManager : MonoSingleton<GameManager> {
 
             // Magnet Button Cooldown timer.
             if (cooldownMagnetCurrent < gameDifficulty.magnetCooldown) {
-                guiMagnetButton.renderer.material.SetFloat("_Cutoff", cooldownMagnetCurrent / gameDifficulty.magnetCooldown);
+                guiMagnetButton.GetComponent<Renderer>().material.SetFloat("_Cutoff", cooldownMagnetCurrent / gameDifficulty.magnetCooldown);
                 cooldownMagnetCurrent += Time.deltaTime;
             } else {
                 guiMagnetButton.usable = true;
@@ -614,7 +614,7 @@ public class GameManager : MonoSingleton<GameManager> {
     private List<GameBuffButton> gameBuffButtons = new List<GameBuffButton>();
 
     void BuffText(string msg) {
-        textBuff.renderer.enabled = true;
+        textBuff.GetComponent<Renderer>().enabled = true;
         textBuff.text = msg;
         textBuffRenderer.enabled = true;
         textBuffRenderer.material.color = textBuffColor;

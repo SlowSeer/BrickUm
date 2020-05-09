@@ -32,7 +32,7 @@ public class GameBuffButton : MonoBehaviour {
     // Cache Components
     void Awake() {
         _transform = transform;
-        _renderer = renderer;
+        _renderer = GetComponent<Renderer>();
     }
 
 
@@ -94,22 +94,22 @@ public class GameBuffButton : MonoBehaviour {
         switch (gameBuffAction) {
             case GameBuffAction.Mystery:
                 Debug.Log("Mystery button touched");
-                particleSystem.Play();
+                GetComponent<ParticleSystem>().Play();
                 GameManager.instance.BuffMystery();
                 break;
             case GameBuffAction.OneUp:
                 Debug.Log("OneUp button touched");
-                particleSystem.Play();
+                GetComponent<ParticleSystem>().Play();
                 GameManager.instance.BuffOneUp();
                 break;
             case GameBuffAction.Bomb:
                 Debug.Log("Bomb button touched");
-                particleSystem.Play();
+                GetComponent<ParticleSystem>().Play();
                 GameManager.instance.BuffBomb();
                 break;
             case GameBuffAction.BigPaddle:
                 Debug.Log("BigPaddle button touched");
-                particleSystem.Play();
+                GetComponent<ParticleSystem>().Play();
                 GameManager.instance.BuffBigPaddle();
                 break;
         }
@@ -120,8 +120,8 @@ public class GameBuffButton : MonoBehaviour {
     // the button has been pressed, so disable it.
     void DisableButton() {
         GameManager.instance.RemoveBuffButton(this);
-        renderer.enabled = false;
-        collider.enabled = false;
+        GetComponent<Renderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
         GameObject.Destroy(gameObject, 1.0f); // Destroy in a sec to allow particles to play out
     }
 

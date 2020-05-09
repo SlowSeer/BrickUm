@@ -38,7 +38,7 @@ public class BallBehaviour : MonoBehaviour {
     // Cache Components
     void Awake() {
         _transform = this.transform;
-        _rigidbody = this.rigidbody;
+        _rigidbody = this.GetComponent<Rigidbody>();
     }
 
     // Drop the ball. Used when starting the game.

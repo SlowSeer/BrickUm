@@ -47,9 +47,9 @@ public class UI : MonoBehaviour
 		// Create the camera
 		_uiCameraHolder = new GameObject();
 		_uiCameraHolder.transform.parent = gameObject.transform;
-		_uiCameraHolder.AddComponent( "Camera" );
+		_uiCameraHolder.AddComponent<Camera>(  );
 		
-		_uiCamera = _uiCameraHolder.camera;
+		_uiCamera = _uiCameraHolder.GetComponent<Camera>();
 		_uiCamera.name = "UICamera";
 		_uiCamera.clearFlags = CameraClearFlags.Depth;
 		_uiCamera.nearClipPlane = 0.3f;
@@ -75,12 +75,8 @@ public class UI : MonoBehaviour
 		}
 		
 		// setup the HD flag
-		// handle texture loading if required
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_ANDROID
 		var deviceAllowsHD = true;
-#else
-		var deviceAllowsHD = ( allowPod4GenHD && iPhone.generation == iPhoneGeneration.iPodTouch4Gen ) || iPhone.generation != iPhoneGeneration.iPodTouch4Gen;
-#endif
+
 		if( autoTextureSelectionForHD && deviceAllowsHD )
 		{
 			// are we loading up a 4x texture?

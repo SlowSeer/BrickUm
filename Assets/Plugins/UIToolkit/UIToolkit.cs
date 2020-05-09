@@ -14,7 +14,7 @@ public class UIToolkit : UISpriteManager
 	// Holds all our touchable sprites
 	private List<ITouchable> _touchableSprites = new List<ITouchable>();
 	
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_WEBGL
 	private Vector2? lastMousePosition;
 #endif
 
@@ -60,7 +60,7 @@ public class UIToolkit : UISpriteManager
 				//lookAtTouch( Input.GetTouch( i ) );
 			}
 		} // end if Input.touchCount
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_WEBGL || UNITY_WEBGL
 		else
 		{
 			// no touches. so check the mouse input if we are in the editor

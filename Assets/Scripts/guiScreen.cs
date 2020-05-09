@@ -25,7 +25,7 @@ public class guiScreen : MonoBehaviour {
         defaultColor = new Color[children.Count];
 
         for (int i = 0; i < children.Count; i++) {
-            defaultColor[i] = children[i].renderer.material.color;
+            defaultColor[i] = children[i].GetComponent<Renderer>().material.color;
         }
     }
 
@@ -59,10 +59,10 @@ public class guiScreen : MonoBehaviour {
 
 
     IEnumerator FadeOut(GameObject go, float time) {
-        Color temp = go.renderer.material.color;
+        Color temp = go.GetComponent<Renderer>().material.color;
         while (temp.a > 0) {
             temp.a -= Time.deltaTime / time;
-            go.renderer.material.color = temp;
+            go.GetComponent<Renderer>().material.color = temp;
             yield return null;
         }
         go.SetActiveRecursively(false);
@@ -74,7 +74,7 @@ public class guiScreen : MonoBehaviour {
         temp.a = 0.01f;
         while (temp.a < color.a) {
             temp.a += Time.deltaTime / time;
-            go.renderer.material.color = temp;
+            go.GetComponent<Renderer>().material.color = temp;
             yield return null;
         }
     }

@@ -38,7 +38,7 @@ public class guiButton : MonoBehaviour {
     
     // Cache Components and Defaults
 	void Awake () {
-        _material = this.renderer.material;
+        _material = this.GetComponent<Renderer>().material;
         defaultColor = _material.color;
         unusableColor = new Color(_material.color.r, _material.color.r, _material.color.r, _material.color.a * 0.25f );
 	}

@@ -50,10 +50,10 @@ public class GameOverBar : MonoBehaviour {
 	void Update () {
         
         // Re-enable if any lives are gained from 0.
-        if (!renderer.enabled && life > 0) { Enable(true); }
+        if (!GetComponent<Renderer>().enabled && life > 0) { Enable(true); }
 
         // Bar Color.
-        if (renderer.enabled) {
+        if (GetComponent<Renderer>().enabled) {
             barColor = GameManager.instance.brickTheme.brickColors[Mathf.Clamp(life, 0, 5)];
             if (GameManager.instance.gameSetup.showColorTransitions) {
                 if (meshBar.colors.Length > 1 && colorsBar[0] != barColor)
@@ -81,8 +81,8 @@ public class GameOverBar : MonoBehaviour {
     }
 
     public void Enable(bool e) {
-            renderer.enabled = e;
-            collider.enabled = e;
+            GetComponent<Renderer>().enabled = e;
+            GetComponent<Collider>().enabled = e;
     }
 
     void OnCollisionEnter(Collision collision) {

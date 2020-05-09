@@ -139,7 +139,7 @@ public class BrickBehaviour : MonoBehaviour {
             GameManager.instance.BrickHit(pos, gameObject, listPosition, true);
 
             defaultScale = Vector3.zero;
-            this.collider.enabled = false;
+            this.GetComponent<Collider>().enabled = false;
             Destroy(gameObject, 0.5f); // Destroy Brick
 
         } else {

@@ -362,7 +362,7 @@ public abstract class UIAbstractTouchableContainer : UIAbstractContainer2, ITouc
 	
 	#region ITouchable
 	
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_WEBGL
 	public bool hoveredOver { get; set; } // not really used for containers
 #endif
 	public bool highlighted { get; set; } // not really used for containers

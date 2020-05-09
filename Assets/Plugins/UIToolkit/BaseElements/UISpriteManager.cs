@@ -75,7 +75,7 @@ public class UISpriteManager : MonoBehaviour
 		duplicateMaterial.CopyPropertiesFromMaterial(material);
 		material = duplicateMaterial;
 		
-		_meshRenderer.renderer.material = material;
+		_meshRenderer.GetComponent<Renderer>().material = material;
 		_mesh = _meshFilter.mesh;
 
 		// Move the object to the origin so the objects drawn will not be offset from the objects they are intended to represent.

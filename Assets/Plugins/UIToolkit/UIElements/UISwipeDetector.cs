@@ -108,7 +108,7 @@ public class UISwipeDetector : UITouchableSprite
 
 		// When dealing with standalones (non touch-based devices) we need to be careful what we examaine
 		// We filter out all touches (mouse movements really) that didnt move
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_WEBGL
 		if( touch.deltaPosition.x != 0.0f || touch.deltaPosition.y != 0.0f )
 		{
 #endif
@@ -124,7 +124,7 @@ public class UISwipeDetector : UITouchableSprite
 		if( touch.deltaPosition.y > 0.0f )
 			touchInfo.swipeDetectionState &= ~SwipeDirection.Down;
 
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_WEBGL
 		}
 #endif
 		

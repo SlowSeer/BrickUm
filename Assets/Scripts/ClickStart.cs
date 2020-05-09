@@ -12,7 +12,7 @@ public class ClickStart : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && guiTexture.HitTest(Input.GetTouch(0).position)) {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && GetComponent<GUITexture>().HitTest(Input.GetTouch(0).position)) {
             StartGame();
         }
 	}

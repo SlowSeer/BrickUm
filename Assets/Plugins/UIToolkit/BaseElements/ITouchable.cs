@@ -4,7 +4,7 @@ using System.Collections;
 
 public interface ITouchable
 {
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_WEBGL
 	bool hoveredOver { get; set; }
 #endif
 	bool highlighted { get; set; }

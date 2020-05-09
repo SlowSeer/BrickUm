@@ -18,7 +18,7 @@ public abstract class UITouchableSprite : UISprite, ITouchable, IComparable
 	
 	protected bool _highlighted;
 	protected bool _disabled;
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_WEBGL
 	protected bool _hoveredOver;
 #endif
 	
@@ -152,7 +152,7 @@ public abstract class UITouchableSprite : UISprite, ITouchable, IComparable
 
 	
 	// indicates if the mouse pointer is hovering over this element
-#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
+#if UNITY_EDITOR || UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_WEBGL
 	public virtual bool hoveredOver
 	{
 		get { return _hoveredOver; }
